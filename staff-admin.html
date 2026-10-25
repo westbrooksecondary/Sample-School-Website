@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Management | ABC Secondary School</title>
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="css/staff-portal.css" rel="stylesheet">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body class="body_wrapper">
+    <main>
+        <section class="page-title">
+            <div class="container">
+                <div class="content-box">
+                    <div class="title">Staff Management</div>
+                    <div class="bread-crumb">
+                        <a href="index.html">Home <i class="fa fa-angle-right"></i></a>
+                        <span>Staff Management</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec-pad">
+            <div class="container">
+                <div class="staff-portal-shell">
+                    <div class="staff-portal-heading">
+                        <div>
+                            <p class="staff-portal-eyebrow">ABC Secondary School</p>
+                            <h1>Manage Staff</h1>
+                        </div>
+                        <a href="staff%26members.html">View public directory</a>
+                    </div>
+                    <div class="portal-section-heading">
+                        <div>
+                            <h2 id="roster-title">Staff roster</h2>
+                            <p>Add, edit, or remove directory entries.</p>
+                        </div>
+                        <button id="portal-logout-button" class="btn-two" type="button">Sign out</button>
+                    </div>
+                    <p id="portal-status" class="portal-status" role="status" aria-live="polite">Checking your sign-in...</p>
+                    <section id="portal-manager-panel" class="portal-manager-panel" hidden aria-labelledby="roster-title">
+                        <form id="staff-record-form" class="staff-record-form">
+                            <input id="staff-record-id" name="id" type="hidden">
+                            <label for="staff-full-name">Full name</label>
+                            <input id="staff-full-name" name="full_name" type="text" maxlength="120" required>
+                            <label for="staff-title">Role or title</label>
+                            <input id="staff-title" name="title" type="text" maxlength="120" required>
+                            <label for="staff-photo-url">Photo URL or site path</label>
+                            <input id="staff-photo-url" name="photo_url" type="text" maxlength="500" placeholder="images/team/1.jpg">
+                            <label for="staff-sort-order">Display order</label>
+                            <input id="staff-sort-order" name="display_order" type="number" value="0" step="1">
+                            <div class="staff-form-actions">
+                                <button id="staff-save-button" class="btn-one style-one radi" type="submit">Add staff member</button>
+                                <button id="staff-cancel-button" class="btn-two" type="button" hidden>Cancel edit</button>
+                            </div>
+                        </form>
+                        <div class="staff-table-wrap">
+                            <table class="staff-admin-table">
+                                <thead>
+                                    <tr><th>Name</th><th>Role</th><th>Order</th><th>Actions</th></tr>
+                                </thead>
+                                <tbody id="staff-record-list"></tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/staff-admin.js"></script>
+</body>
+</html>
