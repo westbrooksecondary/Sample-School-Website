@@ -6,6 +6,7 @@
 <title>Staff Portal | ABC Secondary School</title>
 <link href="css/style.css" rel="stylesheet">
 <link href="css/responsive.css" rel="stylesheet">
+<link href="css/staff-portal.css" rel="stylesheet">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body class="body_wrapper">
@@ -23,17 +24,64 @@
         </section>
         <section class="sec-pad">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2>Staff Roster</h2>
-                        <p>Sign in to GitHub with an account that has write access to the school website repository.</p>
-                        <p>Only authorized repository collaborators can save changes to the staff directory.</p>
-                        <a class="btn-one style-one radi" href="https://github.com/westbrooksecondary/Sample-School-Website/edit/master/staff%26members.html">Manage Staff Roster</a>
-                        <a class="btn-two" href="staff%26members.html">View Staff Directory</a>
+                <div class="staff-portal-shell">
+                    <div class="staff-portal-heading">
+                        <div>
+                            <p class="staff-portal-eyebrow">ABC Secondary School</p>
+                            <h1>Staff Portal</h1>
+                        </div>
+                        <a href="staff%26members.html">View public directory</a>
                     </div>
+                    <p id="portal-status" class="portal-status" role="status" aria-live="polite"></p>
+                    <section id="portal-login-panel" class="portal-login-panel" aria-labelledby="login-title">
+                        <h2 id="login-title">Administrator sign in</h2>
+                        <form id="portal-login-form">
+                            <label for="portal-username">Username</label>
+                            <input id="portal-username" name="username" type="text" value="Luke" autocomplete="username" required>
+                            <label for="portal-password">Password</label>
+                            <input id="portal-password" name="password" type="password" autocomplete="current-password" minlength="12" required>
+                            <p>Use a unique password with at least 12 characters. Set it privately in Supabase.</p>
+                            <button id="portal-login-button" class="btn-one style-one radi" type="submit">Sign in</button>
+                        </form>
+                    </section>
+                    <section id="portal-manager-panel" class="portal-manager-panel" hidden aria-labelledby="roster-title">
+                        <div class="portal-section-heading">
+                            <div>
+                                <h2 id="roster-title">Staff roster</h2>
+                                <p>Add, edit, or remove directory entries.</p>
+                            </div>
+                            <button id="portal-logout-button" class="btn-two" type="button">Sign out</button>
+                        </div>
+                        <form id="staff-record-form" class="staff-record-form">
+                            <input id="staff-record-id" name="id" type="hidden">
+                            <label for="staff-full-name">Full name</label>
+                            <input id="staff-full-name" name="full_name" type="text" maxlength="120" required>
+                            <label for="staff-title">Role or title</label>
+                            <input id="staff-title" name="title" type="text" maxlength="120" required>
+                            <label for="staff-photo-url">Photo URL or site path</label>
+                            <input id="staff-photo-url" name="photo_url" type="text" maxlength="500" placeholder="images/team/1.jpg">
+                            <label for="staff-sort-order">Display order</label>
+                            <input id="staff-sort-order" name="display_order" type="number" value="0" step="1">
+                            <div class="staff-form-actions">
+                                <button id="staff-save-button" class="btn-one style-one radi" type="submit">Add staff member</button>
+                                <button id="staff-cancel-button" class="btn-two" type="button" hidden>Cancel edit</button>
+                            </div>
+                        </form>
+                        <div class="staff-table-wrap">
+                            <table class="staff-admin-table">
+                                <thead>
+                                    <tr><th>Name</th><th>Role</th><th>Order</th><th>Actions</th></tr>
+                                </thead>
+                                <tbody id="staff-record-list"></tbody>
+                            </table>
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>
     </main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/staff-portal.js"></script>
 </body>
 </html>
