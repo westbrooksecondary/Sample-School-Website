@@ -44,38 +44,6 @@
                             <button id="portal-login-button" class="btn-one style-one radi" type="submit">Sign in</button>
                         </form>
                     </section>
-                    <section id="portal-manager-panel" class="portal-manager-panel" hidden aria-labelledby="roster-title">
-                        <div class="portal-section-heading">
-                            <div>
-                                <h2 id="roster-title">Staff roster</h2>
-                                <p>Add, edit, or remove directory entries.</p>
-                            </div>
-                            <button id="portal-logout-button" class="btn-two" type="button">Sign out</button>
-                        </div>
-                        <form id="staff-record-form" class="staff-record-form">
-                            <input id="staff-record-id" name="id" type="hidden">
-                            <label for="staff-full-name">Full name</label>
-                            <input id="staff-full-name" name="full_name" type="text" maxlength="120" required>
-                            <label for="staff-title">Role or title</label>
-                            <input id="staff-title" name="title" type="text" maxlength="120" required>
-                            <label for="staff-photo-url">Photo URL or site path</label>
-                            <input id="staff-photo-url" name="photo_url" type="text" maxlength="500" placeholder="images/team/1.jpg">
-                            <label for="staff-sort-order">Display order</label>
-                            <input id="staff-sort-order" name="display_order" type="number" value="0" step="1">
-                            <div class="staff-form-actions">
-                                <button id="staff-save-button" class="btn-one style-one radi" type="submit">Add staff member</button>
-                                <button id="staff-cancel-button" class="btn-two" type="button" hidden>Cancel edit</button>
-                            </div>
-                        </form>
-                        <div class="staff-table-wrap">
-                            <table class="staff-admin-table">
-                                <thead>
-                                    <tr><th>Name</th><th>Role</th><th>Order</th><th>Actions</th></tr>
-                                </thead>
-                                <tbody id="staff-record-list"></tbody>
-                            </table>
-                        </div>
-                    </section>
                 </div>
             </div>
         </section>
