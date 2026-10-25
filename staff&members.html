@@ -232,7 +232,8 @@
                 <div class="section-title"><h2>Teachers Staff &amp; Faculty Members</h2></div>
                 <a class="btn-one style-one radi" href="staff-portal.html">Staff Login</a>
             </div>
-            <div class="row">
+            <p id="staff-directory-status" class="staff-directory-status" role="status" aria-live="polite"></p>
+            <div class="row" id="staff-directory">
                 <div class="col-md-3 col-sm-6 col-xs-12 team-column">
                     <div class="single-item">
                         <div class="img-content">
@@ -543,6 +544,9 @@
 </script>
 
 <script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/staff-directory.js"></script>
 
 <!-- End of .page_wrapper -->
 </body>
